@@ -91,7 +91,7 @@
 			appid:'18',
 			icon:'friendgroup.png',
 			name:'用户管理',
-			url:'friendgroup.png',
+			url:'用户管理.html',
 			sonMenu:"[]",
 			asc:6
 		},
@@ -99,14 +99,23 @@
 			appid:'20',
 			icon:'wangdesk.png',
 			name:'磁盘空间',
-			url:'http://www.baidu.com/',
+			url:'磁盘空间.html',
+			width:'1600px',
 			asc:7
+		},
+		'theme':{
+			appid:'21',
+			icon:'icon0.png',
+			name:'设置主题',
+			url:'主题设置.html',
+			asc:9
 		},
 		'folder':{
 			appid:'514',
 			icon:'folder_o.png',
 			name:'资料管理',
 			url:'资料管理.html',
+			width:'1000',
 			sonMenu:"[]",
 			asc:8
 		}
@@ -164,7 +173,7 @@
 	}
 };
 ops = {//向桌面添加应用
-	Icon1:['folder','user','disk']
+	Icon1:['folder','user','disk','theme']
 	/**Icon2:['mangguo','tuanmap','fastsearch','bianqian','wangdesk'],
 	Icon3:['friend','friendnear','friendgroup','kaikai','kxjy'],
 	Icon4:['qidianzhongwen','qqread','xiami','musicbox','vadio','leshi'],

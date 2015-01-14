@@ -185,6 +185,7 @@ $.layout = {
 			side:			"top"
 		,	sizeType:		"Height"
 		,	dir:			"horz"
+		
 		,	cssReq: {
 				top: 		0
 			,	bottom: 	"auto"

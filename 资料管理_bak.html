@@ -1,34 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>指南针</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/themes/default/style.min.css" />
+    <link href="css/file.css" rel="stylesheet">
+	<!-- custom scrollbar stylesheet -->
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<!-- LAYOUT v 1.3.0 -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+	<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+	<script type="text/javascript" src="js/jstree.min.js"></script>
+	<!-- MaxCDN Bootstrap plugins -->
+	<script src="js/bootstrap.min.js"></script>
 	
-<link rel="stylesheet" href="js/themes/default/style.min.css" />
-<link href="css/file.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    
+	<!-- custom scrollbar plugin -->
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-   
-	<script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/jstree.min.js"></script>
-	<script >
-	$(function(){
+	<script type="text/javascript">
+$(function(){
 		$('#jstree').jstree();
     // 7 bind to events triggered on the tree
     $('#jstree').on("changed.jstree", function (e, data) {
@@ -40,57 +39,63 @@
       $('#jstree').jstree('select_node', 'child_node_1');
       $.jstree.reference('#jstree').select_node('child_node_1');
     });**/
-						});
+	var sclHeight = $(window).height() -120;
 
+	$("#left_container").mCustomScrollbar({
+					setHeight:sclHeight,
+					theme:"inset-2-dark"
+	});
+});
+	
+	</script>
+<script src="js/layout.js"></script>
 
+</head>
+<body>
 
-</script>
-<style>
-
-</style>	
-  </head>
-
-  <body>
-
-  
-
-    <div class="container1">
-		<div class="row">
-			
-			<div  class="top_bar col-md-12">
-						
-				<div class="nav_bar">
-				
-				<div style="position:absolute;width:160px;left:-120px;top:0px">
-					<button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-chevron-left"></span></button>
-					<button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-refresh"></span></button>
-				</div>		
-				
-						<span class="item">指南针鞋讯女鞋</span>
-						<span class="path_arrow"><img src="img/path_arrow.png"></span>
-						<span class="item">国内女鞋vip</span>
-						<span class="path_arrow"><img src="img/path_arrow.png"></span><span class="item">女凉 女拖</span>
-				
-				
-				<div class="search_div1" style="position:absolute;width: 15%;
-right: -120px;top:0px">
-				
-					  <input type="text" class="form-control">
-					 
+<!-- manually attach allowOverflow method to pane -->
+<div class="ui-layout-north" onmouseover="myLayout.allowOverflow('north')" onmouseout="myLayout.resetOverflow(this)">
+                    
+					<div class="input-append input-prepend" style="float:left;">
+						<div class="btn-group">
+						  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+						  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+						  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+						</div>
 					</div>
-				</div>
-				
-				</div>
-				
-			</div>
-		   
-		</div>
-<div style="clear:both"></div>
-	<div class="row">
+					
+						<div class="nav_bar col-md-9" style="float:left;margin:0 11px" >   
+							<span class="item">指南针鞋讯女鞋</span>
+							<span class="path_arrow"><img src="img/path_arrow.png"></span>
+							<span class="item">国内女鞋vip</span>
+							<span class="path_arrow"><img src="img/path_arrow.png"></span><span class="item">女凉 女拖</span>
+						 </div>
+					
+					 <div style="float:left;width:195px;">
+						<div class="input-group">
+						  <input type="text" class="form-control">
+						  
+						  <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+						</div>
+					 </div>
 
-		<div id="left1" style="width:20%;float:left;padding-left:3px">
-		  
-			<div class="" style="border:0px solid #ccc;height:600px;overflow:scroll">
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<!-- allowOverflow auto-attached by option: west__showOverflowOnHover = true -->
+<div class="ui-layout-west">
+
+<div id="left_container" style="border:0px solid #ccc">
 				<div id="jstree">
   
 					<ul>
@@ -119,7 +124,33 @@ right: -120px;top:0px">
 						    <li >女凉</li>
 							 <li >女凉</li>
 							 <li >女凉</li>
-						  
+						   <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+						   <li >女凉</li>
+						    <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+							  <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+						   <li >女凉</li>
+						    <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+							  <li >女凉</li>
+						    <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+							  <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+						   <li >女凉</li>
+						    <li >女凉</li>
+							 <li >女凉</li>
+							 <li >女凉</li>
+							  <li >女凉</li>
+						
 						 
 						</ul>
 					  </li>
@@ -128,14 +159,15 @@ right: -120px;top:0px">
 				</div>
 	             
 			</div>
-			
-		
-		
-		</div>
-		
-		<!--<div id="middle" class="col-md-1"></div> -->
-		<div id="right1" class="" style="width:80%;float:right"> 
-			<div class="folder_wrap">
+</div>
+
+<div class="ui-layout-south" style="text-align:center">
+   指南针鞋讯版本所有
+</div>
+
+
+<div class="ui-layout-center">
+<div class="folder_wrap">
 				<div class="folder_img"><img src="img/folder.png" width="230" height="220"></div>
 				<div class="folder_txt">女凉 14090820VIP 休闲-成行底</div>
 			</div> 
@@ -188,14 +220,9 @@ right: -120px;top:0px">
 				<div class="pic_img"><img src="img/test4.jpg" width="230" height="220"> </div>
 				<div class="img_txt">女凉 14090820VIP 休闲-成行底</div>
 			</div> 
-			
-		</div> 
-	</div> 
-     
- </div> <!-- /container -->
+</div>
+<!-- Google CDN jQuery with fallback to local -->
 
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-   
-  </body>
+</body>
 </html>

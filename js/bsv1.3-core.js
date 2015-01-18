@@ -1321,8 +1321,8 @@ Windows = function(me){
 						{   
 							"id" :id,
 							title: title,	
-							width:1280,//设置窗口宽度自动适应width
-							height:600,
+							width:"100%",//设置窗口宽度自动适应width
+							height:"100%",
 							close:function(){
 								me.closeMinTask(id);
 								$("#sonfile_a"+id).remove();

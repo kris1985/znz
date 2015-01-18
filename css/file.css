@@ -1,6 +1,8 @@
-body{color:#6f6f70;font-size:12px;}
+body{color:black;font-size:12px;}
 .jstree{margin-left: 5px;}
 .jstree-default .jstree-anchor{color:#191919}
+.jstree-themeicon{width:0px}
+.jstree-anchor .jstree-icon {width:0px}
 .jstree-default .jstree-clicked {
 background: #0186e5;color:#fff;
 }
@@ -23,8 +25,8 @@ margin-bottom:5px;font-size:12px;
 .nav_bar .item:hover{color:#0186e5;font-weight:bold}
 .glyphicon{font-size:12px;font-weight:normal}
 .search_div{float:right;border:1px solid #ccc;padding:3px;line-height:20px;width:12%}
-.folder_wrap{width:250px;
-border:2px solid #fff;float:left;margin-right:20px;
+.folder_wrap{width:270px;height:300px;
+border:2px solid #fff;float:left;margin-right:5px;
 margin-bottom:10px;padding:5px;cursor:pointer;
 }
 .img_wrap{
@@ -32,7 +34,7 @@ border:2px solid #fff;float:left;margin-right:20px;
 margin-bottom:10px;padding:5px;cursor:pointer;width:250px;
 }
 .img_wrap .img_txt{font-size:12px;text-align:center;margin-top:10px}
-.img_wrap:hover, .folder_wrap:hover{
+.img_wraps:hover, .folder_wraps:hover{
 border:2px solid #b8d6fb;
 border-radius: 3px;
 background: #e1effc;

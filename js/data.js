@@ -91,7 +91,7 @@
 			appid:'18',
 			icon:'friendgroup.png',
 			name:'用户管理',
-			url:'用户管理.html',
+			url:'userList.html',
 			sonMenu:"[]",
 			asc:6
 		},
@@ -114,7 +114,7 @@
 			appid:'514',
 			icon:'folder_o.png',
 			name:'资料管理',
-			url:'资料管理.html',
+			url:'files.html',
 			width:'1000',
 			sonMenu:"[]",
 			asc:8

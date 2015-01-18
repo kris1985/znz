@@ -8,7 +8,7 @@ cursor:pointer}
 
 .album{
 	margin:0px auto;
-	width:1000px;
+	width:100%;
 	background: black;
 	position: relative;
 	/**
@@ -33,7 +33,7 @@ cursor:pointer}
 	margin:0 auto;
 	height:500px;
 	text-align:center;
-	overflow:hidden;
+	overflow:hidden;border: 0px solid #fff;
 }
 
 .album-image{
@@ -62,7 +62,7 @@ cursor:pointer}
 	left:0;
 	margin:0;
 	padding:0;
-	width:980px;
+	width:100%;
 	height:750px;
 	overflow:hidden;
 }
@@ -293,3 +293,5 @@ cursor:pointer}
 .hide{
 	display:none;
 }
+
+#album-image{position: absolute;bottom:0px;left:50%;}

@@ -1368,7 +1368,7 @@ a.pure-button-primary {
     }
 
     .content p {
-        font-size: 1.125em;
+        font-size: 1.125em;border: 0px solid #fff;
     }
 
     .code {

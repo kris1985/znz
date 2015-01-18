@@ -97,7 +97,8 @@
 			// 必须使用 preloader 来实现图片的load事件
 			// preloader = new Image() 创建一个新的Image对象
 			// 给 preloader 设置加载图片的路径
-			preloader.src = src;			
+			preloader.src = src;	
+			
 			// 之后就可以开始使用load事件，获得新的图片的实际尺寸
 			// img标签是一个替换元素，我们不能在一开始就获得图片的实际大小
 			// 必须是图片下载(load)完成后，才能获得实际大小
@@ -145,8 +146,8 @@
 				image.animate({
 					"width": width + PX,
 					"height": height + PX,
-					"margin-left": -(width / 2) + PX,
-					"margin-top": -(height / 2) + PX
+					"margin-left": -(width / 2) + PX//,
+					//"margin-top": -(height / 2) + PX
 				}, 500, function(){
 					// 更新图片路径和图片alt属性
 					image.attr({

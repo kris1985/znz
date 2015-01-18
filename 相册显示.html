@@ -11,7 +11,9 @@
 </head>
 <body class="trs-tags" style="background:black">
 <div class="content">
- <div class="skin">
+
+<div class="album" id="album" >
+     <div class="skin">
 		<ul>
 			<li style="background:red">1</li>
 			<li style="background:green">2</li>
@@ -21,10 +23,8 @@
 		
 		</ul>
 	 </div>
-<div class="album" id="album" >
-    
 	 <div class="album-image-md" id="album-image-md">
-		  <p class="album-image-bd"><img src="img/04.jpg" class="album-image" id="album-image" alt="相册图片-示例图片（1）" width="674" height="750" /></p>	  
+		  <div class="album-image-bd" id="album-image-bd"><img src="img/04.jpg" class="" id="album-image" alt="相册图片-示例图片（1）" width="120" height="220"/></div>	  
 	 	  <p class="album-image-ft" id="album-image-ft">相册图片-示例图片（1）</p>
 		 
 		  <ul class="album-image-nav hide" id="album-image-nav">
@@ -57,6 +57,9 @@
 	 	  <a href="#next-group" class="album-carousel-btn-next" id="album-carousel-btn-next">›</a>
 	 </div>
 </div>
+
+<button id="addSizeBtn">add<button/>
+<button id="subSizeBtn">sub<button/>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/carousel.js"></script>
@@ -69,6 +72,36 @@ $(".skin ul li").click(function(){
 	$("body").css("background",$(this).css("background"));
 	$("#album").css("background",$(this).css("background"));
 })
+	$("#subSizeBtn").click(function(){
+	
+	percent = $("#album-image").width() / $("#album-image").height();
+	width = $("#album-image").width()-10;
+	//alert(width);
+	//alert(percent);
+	  $("#album-image").width(width);
+	  height = width / percent;
+	  //alert(height);
+	  $("#album-image").height(height);
+	  margin_left = -(width / 2) + "PX";
+	  $("#album-image").css("margin-left",margin_left);
+	  
+	})
+	
+	$("#addSizeBtn").click(function(){
+	percent = $("#album-image").width() / $("#album-image").height();
+	width = $("#album-image").width()+10;
+	  $("#album-image").width(width);
+	   height = width / percent;
+	  warper =  $("#album-image-bd").height();
+	  if(height>warper){
+		$("#album-image-bd").height(height);
+		$("#album-image-md").height(height+50);
+	  }
+	  $("#album-image").height(height);
+	   margin_left = -(width / 2) + "PX";
+	  // alert(margin_left);
+	  $("#album-image").css("margin-left",margin_left);
+	})
 });
 </script>
 

@@ -65,7 +65,31 @@
 <script type="text/javascript" src="js/carousel.js"></script>
 <script type="text/javascript" src="js/album.js"></script>
 <script type="text/javascript">
-var Album = new jQuery.Album();
+
+Carousel= new jQuery.Carousel({
+				root: '#album-carousel',
+				carousel: '#album-carousel-list',
+				pages: {
+					prev: '#album-carousel-btn-prev',
+					next: '#album-carousel-btn-next'
+				},
+			
+				direction: 'H'
+				})
+				
+var Album = new jQuery.Album(
+				{
+				curIndex:11,
+				Carousel:Carousel
+				
+			});
+
+			
+			Carousel.next.call(Carousel);
+			
+			evt.preventDefault();
+			evt.stopPropagation();
+			
 $(function(){
 $(".skin ul li").click(function(){
 	//alert($(this).css("background"));

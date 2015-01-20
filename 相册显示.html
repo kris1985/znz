@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <title>带缩略图相册 </title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/docs-min.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/pure-min.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/blue.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/grids.css" rel="stylesheet" type="text/css" media="all" />
@@ -23,9 +25,12 @@
 		
 		</ul>
 	 </div>
+	  <p class="album-image-ft" id="album-image-ft">相册图片-示例图片（1）</p>
 	 <div class="album-image-md" id="album-image-md">
-		  <div class="album-image-bd" id="album-image-bd"><img src="img/04.jpg" class="" id="album-image" alt="相册图片-示例图片（1）" width="120" height="220"/></div>	  
-	 	  <p class="album-image-ft" id="album-image-ft">相册图片-示例图片（1）</p>
+		  <div class="album-image-bd" id="album-image-bd"><img src="img/04.jpg" class="" id="album-image" alt="相册图片-示例图片（1）" width="120" height="220"
+		 onmousewheel="return bbimg(this)"
+		  /></div>	  
+	 	 
 		 
 		  <ul class="album-image-nav hide" id="album-image-nav">
 		  	  <li class="album-image-nav-left-block" id="album-image-nav-left-block"><a href="#prev-image" class="album-image-btn-prev" id="album-image-btn-prev">‹</a></li>
@@ -57,20 +62,62 @@
 	 	  <a href="#next-group" class="album-carousel-btn-next" id="album-carousel-btn-next">›</a>
 	 </div>
 </div>
-
-<button id="addSizeBtn">add<button/>
-<button id="subSizeBtn">sub<button/>
+	<div class="fixedBtns" style="height:60px;background-color:black; z-index:999; position:fixed; bottom:0; left:0; width:100%; _position:absolute;">
+		<div style="width:400px; margin:0 auto" >
+		<ul class="bs-glyphicons-list">
+		<li id="preBtn">
+          <span class="glyphicon glyphicon-chevron-left"></span><br/>
+          <span class="glyphicon-class">上一张</span>
+        </li>
+		<li id="addSizeBtn">
+          <span class="glyphicon glyphicon-plus"></span><br/>
+          <span class="glyphicon-class">放大</span>
+        </li>
+		<li id="subSizeBtn">
+          <span class="glyphicon glyphicon-minus" ></span><br/>
+          <span class="glyphicon-class">缩小</span>
+        </li>
+		<li>
+          <span class="glyphicon glyphicon-download-alt"></span><br/>
+          <span class="glyphicon-class">下载</span>
+        </li>
+		<li id="thumbBtn">
+          <span class="glyphicon glyphicon-picture"></span><br/>
+          <span class="glyphicon-class">缩略图</span>
+        </li>
+		<li id="nextBtn">
+          <span class="glyphicon glyphicon-play"></span><br/>
+          <span class="glyphicon-class">下一张</span>
+        </li>
+		</ul>
+		
+		</div>
+	</div>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/carousel.js"></script>
 <script type="text/javascript" src="js/album.js"></script>
 <script type="text/javascript">
+
+//改变图片大小
+function resizepic(thispic)
+{
+if(thispic.width>1200) thispic.width=1200;
+}
+//无级缩放图片大小
+function bbimg(o){
+//alert("s");
+var zoom=parseInt(o.style.zoom,10)||100;zoom+=event.wheelDelta/12;
+if(zoom>0) o.style.zoom=zoom+'%';
+return false;}
+
 var Album = new jQuery.Album();
 $(function(){
 $(".skin ul li").click(function(){
 	//alert($(this).css("background"));
 	$("body").css("background",$(this).css("background"));
 	$("#album").css("background",$(this).css("background"));
+	$(".fixedBtns").css("background",$(this).css("background"));
 })
 	$("#subSizeBtn").click(function(){
 	
@@ -95,13 +142,37 @@ $(".skin ul li").click(function(){
 	  warper =  $("#album-image-bd").height();
 	  if(height>warper){
 		$("#album-image-bd").height(height);
-		$("#album-image-md").height(height+50);
+		//$("#album-image-md").height(height+50);
 	  }
 	  $("#album-image").height(height);
 	   margin_left = -(width / 2) + "PX";
 	  // alert(margin_left);
 	  $("#album-image").css("margin-left",margin_left);
+	});
+	
+	$("#preBtn").click(function(){
+	            Album.prev();	
+				evt.preventDefault();
+				evt.stopPropagation();
 	})
+	$("#nextBtn").click(function(){
+	            Album.next();
+				evt.preventDefault();
+				evt.stopPropagation();
+	})
+	$("#thumbBtn").click(function(){
+	    // height = $("#album-image-md").height();
+		if($("#album-carousel").hasClass("hide")){
+		  $("#album-carousel").removeClass("hide");
+		 
+		  //$("#album-image-md").height(height+50)
+		}else{
+		
+		  $("#album-carousel").addClass("hide");
+		  //$("#album-image-md").height(height-50)
+		}
+		
+	});
 });
 </script>
 

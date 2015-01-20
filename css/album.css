@@ -2,6 +2,7 @@
 position: absolute;
 right: 20px;
 width: 180px;
+z-index: 9999;
 }
 .skin ul li{float:left;display:block;width:16px;height:16px;margin-right:10px;text-indent:-9999px;
 cursor:pointer}
@@ -23,7 +24,7 @@ cursor:pointer}
 	position:relative;
 	z-index:1;
 	margin:0 auto;
-	height:550px;
+	height:500px;
 	overflow:hidden;
 }
 
@@ -49,6 +50,10 @@ cursor:pointer}
 	line-height:50px;
 	text-align:center;
 	overflow:hidden;
+	position: absolute;
+	left:20px;
+	top:0;color:#fff;font-weight:bold;
+	
 }
 
 #album-image-ft{
@@ -138,7 +143,7 @@ cursor:pointer}
 	top:0;
 	left:0;
 	margin:0;
-	width:980px;
+	width:1000px;
 	height:750px;
 	background-color:#FFF;
 	opacity: 0.6;
@@ -295,3 +300,6 @@ cursor:pointer}
 }
 
 #album-image{position: absolute;bottom:0px;left:50%;}
+
+.bs-glyphicons-list li{float:left;margin-right:30px;text-align:center;cursor:pointer}
+.bs-glyphicons-list li:hover{font-weight:bold}
